@@ -1,0 +1,86 @@
+
+/* Full-screen animated gradient background */
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.notif-bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(-45deg, #667eea, #764ba2, #ff8a65, #ff7043);
+  background-size: 400% 400%;
+  animation: bgMove 15s ease infinite;
+}
+
+/* Circular rotating gradient loader */
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.notif-loader {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #e4c352, #7df8d6, #eb31b0);
+  animation: rotate 2s linear infinite;
+  position: relative;
+}
+
+.notif-loader::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: #ffffffaa;
+  border-radius: 50%;
+}
+
+.notif-message {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+
+.notif-loading-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: linear-gradient(-45deg, #232427, #02276c, #700174, #a20303);
+  text-align: center;
+  color: #666;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #dddddd00;
+  border-top: 6px solid #0bf3ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.notif-loading-wrapper p{
+    font-size: 28px;
+    color: #f7e413;
+}
